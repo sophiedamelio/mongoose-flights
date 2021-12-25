@@ -20,7 +20,7 @@ const flightSchema = new Schema({
   },
   departs: {
     type: Date,
-    default: new Date()
+    default: new Date
   },
 });
 

@@ -9,13 +9,15 @@
   </head>
   <body>
     <div class="topnav">
+      <a href="/">Home</a>
       <a href="/flights">All Flights</a>
       <a href="/flights/new">New Flight</a>
     </div>
-    <h1>All Flights</h1>
+    <div class="flight-table">
+    <h1 class="hdr">All Flights</h1>
     <table>
       <thread>
-        <tr>
+        <tr class="key">
           <th>Airline</th>
           <th>Airport</th>
           <th>Flight No</th>
@@ -24,7 +26,7 @@
       </thread>
       <tbody>
         <% flights.forEach(function(f) { %>
-        <tr>
+        <tr class="content">
           <td><%= f.airline %></td>
           <td><%= f.airport %></td>
           <td><%= f.flightNo %></td>
@@ -33,5 +35,6 @@
         <% }) %>
       </tbody>
     </table>
+    </div>
   </body>
 </html>

@@ -17,3 +17,27 @@ a {
 .topnav a:hover {
   color: red;
 }
+
+.flight-table {
+  display: grid;
+  /* grid-template-columns: 1fr 1fr 1fr 3fr; */
+  grid-template-areas: 
+  "hdr"
+  "key"
+  "content";
+}
+
+.flight-table .hdr {
+  grid-area: "hdr"
+}
+
+.flight-table .key {
+  grid-area: "key";
+}
+
+.flight-table .content {
+  grid-area: "content";
+}
+
+
+
