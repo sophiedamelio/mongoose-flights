@@ -25,6 +25,7 @@ const flightSchema = new Schema(
       type: Date,
       default: function () {
         // this needs to be in datetime local format (currently not valid)
+        // or return new Date(Date.now() + 365*24*60*60*1000).toDateString()
         return new Date().moment().format("MM Do YYYY, hh:mm a");
       },
     },
