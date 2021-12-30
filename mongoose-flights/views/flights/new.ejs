@@ -38,10 +38,6 @@
       ><br />
       <label
         >Departs:
-        <script src="moment.js"></script>
-        <script>
-          moment().format(new Date());
-        </script>
         <!--
           this
           new
@@ -57,7 +53,7 @@
           it
           logs correctly -->
         <input
-          value="<%= new Date() %>"
+          value="<%= departsDate; %>"
           type="datetime-local"
           name="departs" /></label
       ><br />

@@ -25,7 +25,8 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
 app.use(function (req, res, next) {
-  console.log("Date:", moment().format(`MM/DD/YYYY, hh:mm a`));
+  // should this line replace the input value? Is this the function part I am missing?
+  // console.log("Date:", moment().format(`MM/DD/YYYY, hh:mm a`));
   next();
 });
 
