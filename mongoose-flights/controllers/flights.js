@@ -21,7 +21,8 @@ function newFlight(req, res) {
   const dt = newFlight.departs;
   console.log(dt)
   // // Format the date for the value attribute of the input
-  const departsDate = dt.toISOString().slice(0, 16);
+  let departsDate = dt.toLocaleString().slice(0, 22);
+
   res.render('flights/new', {departsDate});
 };
 
