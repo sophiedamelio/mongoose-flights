@@ -10,6 +10,7 @@
   </head>
   <body>
     <div class="topnav">
+      <a href="/">Home</a>
       <a href="/flights">All Flights</a>
       <a href="/flights/new">New Flight</a>
     </div>
@@ -38,8 +39,10 @@
       ><br />
       <label
         >Departs:
+        <!-- this input value is set to localDate, as declared in our newFlight controller
+        we slice it so that it renders in our datetime-local calender -->
         <input
-          value="<%= departsDate; %>"
+          value="<%= localDate.slice(0, 16) %>"
           type="datetime-local"
           name="departs" /></label
       ><br />

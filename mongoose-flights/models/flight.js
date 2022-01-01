@@ -30,7 +30,6 @@ const flightSchema = new Schema(
         // return new Date()
         let newDate = new Date();
         let nextYear = newDate.setFullYear(newDate.getFullYear() + 1);
-    
         return nextYear;
       },
     },

@@ -14,27 +14,27 @@
       <a href="/flights/new">New Flight</a>
     </div>
     <div class="flight-table">
-    <h1 class="hdr">All Flights</h1>
-    <table>
-      <thread>
-        <tr class="key">
-          <th>Airline</th>
-          <th>Airport</th>
-          <th>Flight No</th>
-          <th>Departure Date and Time</th>
-        </tr>
-      </thread>
-      <tbody>
-        <% flights.forEach(function(f) { %>
-        <tr class="content">
-          <td><%= f.airline %></td>
-          <td><%= f.airport %></td>
-          <td><%= f.flightNo %></td>
-          <td><%= f.departs %></td>
-        </tr>
-        <% }) %>
-      </tbody>
-    </table>
+      <h1 id="hdr">All Flights</h1>
+      <table class="key">
+        <thread>
+          <tr>
+            <th>Airline</th>
+            <th>Airport</th>
+            <th>Flight No</th>
+            <th>Departure Date and Time</th>
+          </tr>
+        </thread>
+        <tbody>
+          <% flights.forEach(function(f) { %>
+          <tr class="content">
+            <td><%= f.airline %></td>
+            <td><%= f.airport %></td>
+            <td><%= f.flightNo %></td>
+            <td><%= f.departs %></td>
+          </tr>
+          <% }) %>
+        </tbody>
+      </table>
     </div>
   </body>
 </html>

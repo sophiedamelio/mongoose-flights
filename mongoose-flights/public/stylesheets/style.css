@@ -4,7 +4,7 @@ body {
 }
 
 a {
-  color: #00B7FF;
+  color: #00b7ff;
 }
 
 .topnav {
@@ -19,25 +19,24 @@ a {
 }
 
 .flight-table {
+  text-align: left;
   display: grid;
-  /* grid-template-columns: 1fr 1fr 1fr 3fr; */
-  grid-template-areas: 
-  "hdr"
-  "key"
-  "content";
+  grid-template-areas:
+    "hdr hdr hdr hdr"
+    "key key key key"
+    "content content content content";
+  grid-template-rows: 1fr 1fr 100%;
+  grid-template-columns: 2fr 1fr 1fr 6fr;
 }
 
-.flight-table .hdr {
-  grid-area: "hdr"
+#hdr {
+  grid-area: hdr;
 }
 
 .flight-table .key {
-  grid-area: "key";
+  grid-area: key;
 }
 
 .flight-table .content {
-  grid-area: "content";
+  grid-area: content;
 }
-
-
-
