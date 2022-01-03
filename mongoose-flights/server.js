@@ -3,7 +3,6 @@ var express = require("express");
 var path = require("path");
 var cookieParser = require("cookie-parser");
 var logger = require("morgan");
-var moment = require("moment");
 
 var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
@@ -23,12 +22,6 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
-
-app.use(function (req, res, next) {
-  // should this line replace the input value? Is this the function part I am missing?
-  // console.log("Date:", moment().format(`MM/DD/YYYY, hh:mm a`));
-  next();
-});
 
 app.use("/", indexRouter);
 app.use("/users", usersRouter);

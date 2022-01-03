@@ -20,7 +20,6 @@ function newFlight(req, res) {
   //   return res.status(400).send("Flight Number is required.");
   //   // add <a> here to link to 'new.ejs' , New Flight
   // } else {
-
   const newFlight = new Flight();
   // Obtain the default date
   const dt = newFlight.departs;
