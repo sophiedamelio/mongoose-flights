@@ -10,7 +10,6 @@ const destinationSchema = new Schema({
   arrival: {
     type: Date,
   },
-  timestamps: true,
 });
 
 const flightSchema = new Schema(
@@ -47,7 +46,7 @@ const flightSchema = new Schema(
     destinations: [destinationSchema],
   },
   {
-    timestamps: { createdAt: "createdAt", updatedAt: "updatedAt" },
+    timestamps: true,
   }
 );
 

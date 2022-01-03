@@ -4,13 +4,34 @@ module.exports = {
   index,
   create,
   new: newFlight,
+  show,
 };
 
 function index(req, res) {
   Flight.find({}, function (err, flightDocuments) {
     res.render("flights/index", {
+      title: "Flights",
       flights: flightDocuments,
     });
+  });
+}
+
+function show(req, res) {
+  const newFlight = new Flight();
+  // Obtain the default date
+  const dt = newFlight.departs;
+  // this gets the timezone offset of dt (our default date)
+  let offset = dt.getTimezoneOffset() * 60000;
+  // declares a local date, taking the default (dt) date, subtracting the offset
+  // and converts to ISO String
+  // in our flights/new.ejs, we set the value="localDate", and use slice(0,16)
+  // to get the proper format to render in our type="datetime-local" input
+  let localDate = new Date(dt - offset).toISOString();
+  //
+  // res.render(`/flights/${flightDocument._id}`, { localDate });
+
+  Flight.findById(req.params.id, function (err, flight) {
+    res.render("flights/show", { title: "Flight Details", localDate, flight });
   });
 }
 
@@ -23,8 +44,6 @@ function newFlight(req, res) {
   const newFlight = new Flight();
   // Obtain the default date
   const dt = newFlight.departs;
-  console.log(dt);
-
   // this gets the timezone offset of dt (our default date)
   let offset = dt.getTimezoneOffset() * 60000;
   // declares a local date, taking the default (dt) date, subtracting the offset
