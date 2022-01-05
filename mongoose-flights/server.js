@@ -8,15 +8,16 @@ var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
 var flightsRouter = require("./routes/flights");
 const destinationRouter = require("./routes/destinations");
+const ticketsRouter = require("./routes/tickets");
 
 var app = express();
-// const mongoose = require("mongoose");
+const mongoose = require("mongoose");
 
-// mongoose.connect("mongodb://localhost/flights", {
-//   useNewUrlParser: true,
-//   useUnifiedTopology: true,
-//   useCreateIndex: true,
-// });
+mongoose.connect("mongodb://localhost/flights", {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+  useCreateIndex: true,
+});
 
 // executes the database.js file, creates connection with mongodb
 require("./config/database");
@@ -35,6 +36,7 @@ app.use("/", indexRouter);
 app.use("/users", usersRouter);
 app.use("/flights", flightsRouter);
 app.use("/", destinationRouter);
+app.use("/tickets", ticketsRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

@@ -22,7 +22,7 @@
                     <th>Airport:</th>
                     <th>Flight Number:</th>
                     <th>Departs:</th>
-    
+                    <th>Tickets:</th>
                 </tr>
             </thead>
             <tbody>
@@ -31,6 +31,7 @@
                     <td><%=flight.airport%></td>
                     <td><%=flight.flightNo%></td>
                     <td><%=flight.departs%></td>
+                    <!-- <td><ul><%-//flight.tickets.map(t => `<li>${t}</li>`).join('')%></ul></td> -->
                 
                 </tr>
             </tbody>
@@ -69,6 +70,6 @@
         </label>
         <input type="submit" value="Add Destination" />
     </form>
-    
+    <a href="/flights/tickets/<%=flight._id%>/new">New Ticket</a>
   </body>
 </html>
