@@ -13,13 +13,25 @@
       <a href="/flights">All Flights</a>
       <a href="/flights/new">New Flight</a>
     </div>
-    <div>Add Ticket</div>
-    <form id="add-ticket-form" method="POST" action="/flights/<%=flight._id%>">
-      <label>Seat:</label>
-      <input name="seat" required pattern="[A-F][1-9]\d?" />
+    <h2>Add Ticket</h2>
+    <form
+      id="add-ticket-form"
+      method="POST"
+      action="/flights/<%=flight._id%>/tickets"
+    >
+      <label
+        >Seat:<input name="seat" required pattern="[A-F][1-9]\d?" /></br><i
+          >
+          (first character must be A-F, second character must be 1-99)</i
+        ></br>
+      </br></label
+      >
+    
 
       <label>Price:</label>
       <input name="price" required />
+  </br>
+</br>
       <input type="submit" value="Add Ticket" />
     </form>
   </body>

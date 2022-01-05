@@ -9,6 +9,7 @@ module.exports = {
   show,
 };
 
+// this function takes you to the new ticket page of the flight you were viewing (show)
 function newTicket(req, res) {
   // res.send("new ticket function envoked");
   Flight.findById(req.params.id, function (err, flight) {
@@ -41,14 +42,14 @@ function show(req, res) {
   // res.render(`/flights/${flightDocument._id}`, { localDate });
 
   Flight.findById(req.params.id, function (err, flight) {
-    // Ticket.find({ flight: flight._id }, function (err, tickets) {
-    res.render("flights/show", {
-      title: "Flight Details",
-      localDate,
-      flight,
-      // tickets,
+    Ticket.find({ flight: flight._id }, function (err, tickets) {
+      res.render("flights/show", {
+        title: "Flight Details",
+        localDate,
+        flight,
+        tickets,
+      });
     });
-    // });
   });
 }
 

@@ -30,23 +30,24 @@
                     <td><%=flight.airport%></td>
                     <td><%=flight.flightNo%></td>
                     <td><%=flight.departs%></td>
-                    <!-- <td><ul><%-//flight.tickets.map(t => `<li>${t}</li>`).join('')%></ul></td> -->
                 
                 </tr>
             </tbody>
         </table>
     </br>
     <div>Tickets:</div>   
-</br>
-<% if (ticket.flight === flight._id && ticket.flight.length) { %>
-    <!-- iterate through the Tickets array? -->
-    <%flight.tickets.forEach(function(t){ %>
-      <div>Seat: <%=t.seat%></div>
-      <div>Price: <%=t.price%></div>
-  <% }); %>
+    <!-- /flights/t._id/tickets -->
+    <% if (tickets.length) { %>
+    <%tickets.forEach(function (t){%>
+  <div>Seat:<%=t.seat%></div>
+  <div>Price:<%=t.price%></div>
+    <%})%>
   <% } else { %>
-      <div> No tickets yet</div>
-      <%} %>
+  <div>No tickets yet</div>
+  <%}%>
+    <!--  how do I access tickets here? -->
+    
+</br>
 
     </br>
         <div>Destinations:</div>
@@ -82,6 +83,6 @@
         </label>
         <input type="submit" value="Add Destination" />
     </form>
-    <a href="/flights/tickets/<%=flight._id%>/new">New Ticket</a>
+    <a href="/flights/<%=flight._id%>/tickets/new">New Ticket</a>
   </body>
 </html>

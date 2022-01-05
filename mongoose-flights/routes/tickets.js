@@ -5,6 +5,11 @@ const ticketsCtrl = require("../controllers/tickets");
 
 // router.post("/tickets", ticketsCtrl.create);
 
-router.post(":id/new", ticketsCtrl.create);
+// is this route correct?
+// router.get("/:id/tickets/new", ticketsCtrl.new);
+// flights is here because
+router.post("/flights/:id/tickets", ticketsCtrl.create);
+
+// router.post("/:id/tickets", ticketsCtrl.addToTickets);
 
 module.exports = router;
