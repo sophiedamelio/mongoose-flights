@@ -9,7 +9,14 @@ module.exports = {
 function addToTickets(req, res) {
   console.log(req.body, `<-- req body`);
   console.log(req.params, `<--req.params`);
-  res.send("add to tickets envoked");
+  //   res.send("add to tickets envoked");
+
+  Flight.findById(req.params.id, function (err, flightDocument) {
+    ticketDocument.tickets.push(req.body.ticketId);
+    ticketDocument.save(function (err) {
+      res.redirect(`/flights/${flightDocument._id}`);
+    });
+  });
 }
 
 function create(req, res) {

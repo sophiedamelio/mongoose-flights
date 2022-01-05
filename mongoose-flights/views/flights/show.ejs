@@ -22,7 +22,6 @@
                     <th>Airport:</th>
                     <th>Flight Number:</th>
                     <th>Departs:</th>
-                    <th>Tickets:</th>
                 </tr>
             </thead>
             <tbody>
@@ -36,6 +35,19 @@
                 </tr>
             </tbody>
         </table>
+    </br>
+    <div>Tickets:</div>   
+</br>
+<% if (ticket.flight === flight._id && ticket.flight.length) { %>
+    <!-- iterate through the Tickets array? -->
+    <%flight.tickets.forEach(function(t){ %>
+      <div>Seat: <%=t.seat%></div>
+      <div>Price: <%=t.price%></div>
+  <% }); %>
+  <% } else { %>
+      <div> No tickets yet</div>
+      <%} %>
+
     </br>
         <div>Destinations:</div>
     </br>
