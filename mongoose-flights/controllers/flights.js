@@ -38,9 +38,6 @@ function show(req, res) {
   // in our flights/new.ejs, we set the value="localDate", and use slice(0,16)
   // to get the proper format to render in our type="datetime-local" input
   let localDate = new Date(dt - offset).toISOString();
-  //
-  // res.render(`/flights/${flightDocument._id}`, { localDate });
-
   Flight.findById(req.params.id, function (err, flight) {
     Ticket.find({ flight: flight._id }, function (err, tickets) {
       res.render("flights/show", {
@@ -54,11 +51,6 @@ function show(req, res) {
 }
 
 function newFlight(req, res) {
-  // this should only fire when the new flight button is pressed
-  // if (!req.body.flightNo) {
-  //   return res.status(400).send("Flight Number is required.");
-  //   // add <a> here to link to 'new.ejs' , New Flight
-  // } else {
   const newFlight = new Flight();
   // Obtain the default date
   const dt = newFlight.departs;

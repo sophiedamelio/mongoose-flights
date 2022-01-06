@@ -34,10 +34,6 @@ const flightSchema = new Schema(
     departs: {
       type: Date,
       default: function () {
-        // this needs to be in datetime local format (currently not valid)
-        // or return new Date(Date.now() + 365*24*60*60*1000).toDateString()
-        // console.log(flightSchema)
-        // return new Date()
         let newDate = new Date();
         let nextYear = newDate.setFullYear(newDate.getFullYear() + 1);
         return nextYear;

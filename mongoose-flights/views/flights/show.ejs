@@ -40,20 +40,18 @@
     <% if (tickets.length) { %>
     <%tickets.forEach(function (t){%>
   <div>Seat:<%=t.seat%></div>
-  <div>Price:<%=t.price%></div>
+  <div>Price:$<%=t.price%></div>
     <%})%>
   <% } else { %>
   <div>No tickets yet</div>
   <%}%>
-    <!--  how do I access tickets here? -->
     
 </br>
 
     </br>
         <div>Destinations:</div>
     </br>
-    <!-- I want there to be line spaces between each flight.destination -->
-        <% if (flight.destinations.length) { %>
+            <% if (flight.destinations.length) { %>
             <%flight.destinations.forEach(function(f){ %>
               <div>Airport: <%=f.airport%></div>
               <div>Arrival: <%=f.arrival%></div>
