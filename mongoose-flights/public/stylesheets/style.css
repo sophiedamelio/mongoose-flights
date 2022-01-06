@@ -2,23 +2,28 @@ body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
-tr td {
-  border: 2px solid black;
+tr:nth-child(odd) {
+  background-color: lightblue;
 }
 
 a {
-  color: #00b7ff;
+  color: darkblue;
 }
 
 .topnav {
-  background-color: black;
+  background-color: #00b7ff;
+  width: 100%;
   color: white;
   display: flex;
   justify-content: space-evenly;
+  padding: 30px;
+  position: fixed;
+  top: 0;
+  left: 0;
 }
 
 .topnav a:hover {
-  color: red;
+  color: white;
 }
 
 .flight-table {
@@ -42,4 +47,35 @@ a {
 
 .flight-table .content {
   grid-area: content;
+}
+
+#flight-table-key {
+  background-color: white;
+}
+
+#show-page {
+  padding-top: 70px;
+}
+
+#show-table {
+  text-align: left;
+}
+
+#show-table-key {
+  background-color: white;
+}
+#show-table-contents {
+  text-align: left;
+  background-color: lightblue;
+}
+
+.ticket-info,
+.destination-info {
+  background-color: lightblue;
+}
+
+#add-ticket,
+#new-flight,
+#hdr {
+  padding-top: 70px;
 }

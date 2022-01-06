@@ -5,7 +5,6 @@ module.exports = {
   create,
 };
 
-// this function m
 function create(req, res) {
   Flight.findById(req.params.id, function (err, flightDoc) {
     // create ticket with req.body (form contents)
